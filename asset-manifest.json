@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.ba4bfbb9.css",
+    "main.js": "/Portfolio/static/js/main.c3bf079c.js",
+    "static/js/787.5555fff4.chunk.js": "/Portfolio/static/js/787.5555fff4.chunk.js",
+    "static/media/malekChb.png": "/Portfolio/static/media/malekChb.d91e22d6daf5aeadea27.png",
+    "static/media/logoMa.png": "/Portfolio/static/media/logoMa.830f5a61abf00da14042.png",
+    "static/media/WhatsApp Image 2024-06-26 at 15.54.23 (1).jpeg": "/Portfolio/static/media/WhatsApp Image 2024-06-26 at 15.54.23 (1).333082c8a6e80e0a155d.jpeg",
+    "static/media/slick.svg": "/Portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Portfolio/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Portfolio/index.html",
+    "main.ba4bfbb9.css.map": "/Portfolio/static/css/main.ba4bfbb9.css.map",
+    "main.c3bf079c.js.map": "/Portfolio/static/js/main.c3bf079c.js.map",
+    "787.5555fff4.chunk.js.map": "/Portfolio/static/js/787.5555fff4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba4bfbb9.css",
+    "static/js/main.c3bf079c.js"
+  ]
+}
