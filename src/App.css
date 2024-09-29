@@ -23,6 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.bggeneral{
+  background-image: url('./assests/images/motif.jpg');
+}
 
 .App-link {
   color: #61dafb;
