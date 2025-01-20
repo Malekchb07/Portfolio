@@ -11,11 +11,11 @@ import Contact from "./components/contact/Contact";
 import { OpenDrawer } from "./components/presentation/openDrawer/OpenDrawer";
 import { Footer } from "./components/footer/Footer";
 import { AirbnbCard } from "./components/accueil/Accuiel";
-import {Projects} from "./components/projects/Projects";
 import { ProjectDetail } from "./components/projects/Project_Details";
 import { Reviews } from "./components/reviews/Reviews";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { ProjectsList } from "./components/projects/Projects";
 
 function App() {
 	return (
@@ -24,7 +24,7 @@ function App() {
 			<Navbar />
 				<Routes>
 					<Route path="/" element={<AirbnbCard />} />
-					<Route path="/projects" element={<Projects />} />
+					<Route path="/projects" element={<ProjectsList />} />
 					<Route path="/projects/:id" element={<ProjectDetail />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/contact" element={<Contact />} />

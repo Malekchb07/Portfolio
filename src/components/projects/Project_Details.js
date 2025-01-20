@@ -1,44 +1,63 @@
 import { useParams } from 'react-router-dom';
-import { Box, Image, Text, SimpleGrid, Badge } from '@chakra-ui/react';
-
-const projectDetails = {
-  1: {
-    title: 'Student Management App',
-    description: 'A complete mobile app for managing students, with features like QR code attendance scanning and student data management.',
-    captures: ['/assets/images/student-app-1.png', '/assets/images/student-app-2.png'],
-    tags: ['Flutter', 'Firebase'],
-  },
-  2: {
-    title: 'Web Developer Portfolio',
-    description: 'A React-based portfolio to showcase web and mobile app development skills. This includes a dynamic dashboard for project management.',
-    captures: ['/assets/images/portfolio-1.png', '/assets/images/portfolio-2.png'],
-    tags: ['React', 'Chakra UI'],
-  },
-};
+import { Box, Image, Text, SimpleGrid, Badge, Flex, VStack, Heading, Container } from '@chakra-ui/react';
+import { Projects } from './Projets_Informations';
 
 export const ProjectDetail = () => {
   const { id } = useParams();
-  const project = projectDetails[id];
+  const project = Projects.find((project) => project.id === parseInt(id, 10));
+
+  if (!project) {
+    return <Text fontSize="xl" textAlign="center" color="red.500" mt={10}>Project not found</Text>;
+  }
 
   return (
-    <Box p={5}>
-      <Box>
-        <Text fontSize="3xl" fontWeight="bold">{project.title}</Text>
-        <Box display="flex" mt={3}>
+    <Container maxW="7xl" py={8}>
+      {/* Header Section */}
+      <VStack spacing={5} align="start" mb={8}>
+        <Heading as="h1" fontSize={["2xl", "3xl", "4xl"]} fontWeight="bold" color="teal.600">
+          {project.title}
+        </Heading>
+        <Flex wrap="wrap" gap={2}>
           {project.tags.map((tag, index) => (
-            <Badge key={index} borderRadius="full" px="2" colorScheme="teal" mr={2}>
+            <Badge
+              key={index}
+              borderRadius="full"
+              px={4}
+              py={2}
+              colorScheme="teal"
+              fontSize="sm"
+              textTransform="capitalize"
+            >
               {tag}
             </Badge>
           ))}
-        </Box>
-        <Text mt={5}>{project.description}</Text>
-      </Box>
+        </Flex>
+        <Text fontSize="lg" color="gray.700" mt={2}>
+          {project.description}
+        </Text>
+      </VStack>
 
-      <SimpleGrid columns={[1, 2]} spacing={10} mt={8}>
+      {/* Gallery Section */}
+      <SimpleGrid columns={[1, 2, 3]} spacing={5}>
         {project.captures.map((capture, index) => (
-          <Image key={index} src={capture} alt={`Capture ${index + 1}`} />
+          <Box
+            key={index}
+            overflow="hidden"
+            borderRadius="lg"
+            shadow="md"
+            _hover={{ transform: 'scale(1.05)', transition: '0.3s ease-in-out' }}
+          >
+            <Image
+              src={capture}
+              alt={`Capture ${index + 1}`}
+              objectFit="cover"
+              w="100%"
+              h={["200px", "300px", "350px"]}
+              transition="0.3s"
+            />
+          </Box>
         ))}
       </SimpleGrid>
-    </Box>
+    </Container>
   );
 };
