@@ -39,8 +39,12 @@
 
 import project1 from '../../assests/mes_projets/student_management/WhatsApp Image 2024-06-26 at 15.54.23 (1).jpeg';
 import project2 from '../../assests/mes_projets/emailing_app_stepper/WhatsApp Image 2024-06-26 at 15.56.33.jpeg';
-import project3 from '../../assests/mes_projets/projets personnels ( en cours )/booking/booking-dashboard.png';
-import project4 from '../../assests/mes_projets/projets personnels ( en cours )/booking/booking1.png';
+import project3 from '../../assests/mes_projets/projets_personnels/booking/booking-dashboard.png';
+import project4 from '../../assests/mes_projets/projets_personnels/booking/booking1.png';
+import project5 from '../../assests/mes_projets/projets_personnels/booking/booking1.png';
+import project6 from '../../assests/mes_projets/projets_personnels/booking/booking1.png';
+import project7 from '../../assests/mes_projets/projets_personnels/booking/booking1.png';
+import project8 from '../../assests/mes_projets/projets_personnels/booking/booking1.png';
 
 export const Projects = [
   {
@@ -69,6 +73,34 @@ export const Projects = [
     title: 'Application Mobile Guido',
     description: 'A portfolio to showcase my web development projects.',
     captures: [project4],
+    tags: ['React', 'Chakra UI'],
+  },
+  {
+    id: 5,
+    title: 'Application Mobile Gestion des Clients',
+    description: 'A portfolio to showcase my web development projects.',
+    captures: [project5],
+    tags: ['React', 'Chakra UI'],
+  },
+  {
+    id: 6,
+    title: 'Application Mobile Gestion des Entrepôts',
+    description: 'A portfolio to showcase my web development projects.',
+    captures: [project6],
+    tags: ['React', 'Chakra UI'],
+  },
+  {
+    id: 7,
+    title: 'Site Web E-Commerce , Prestashop',
+    description: 'A portfolio to showcase my web development projects.',
+    captures: [project7],
+    tags: ['React', 'Chakra UI'],
+  },
+  {
+    id: 8,
+    title: 'Application Mobile Gestion des Entrepôts',
+    description: 'A portfolio to showcase my web development projects.',
+    captures: [project8],
     tags: ['React', 'Chakra UI'],
   },
 ];
