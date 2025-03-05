@@ -3,13 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './i18n';
+
+// Add RTL support styles
+const style = document.createElement('style');
+style.textContent = `
+  [dir="rtl"] {
+    text-align: right;
+  }
+  [dir="ltr"] {
+    text-align: left;
+  }
+`;
+document.head.appendChild(style);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <App />
+    <App />
   </React.StrictMode>
 );
 
