@@ -25,33 +25,63 @@ export const translations = {
       title: "Experience & Education",
       work: [
         {
-          title: "Senior Software Engineer",
-          company: "Tech Company",
-          date: "2022 - Present",
+          title: "Full Stack Developer",
+          company: "Hightech Moving Company",
+          date: "10/2024 - Present",
           description:
-            "Leading development of web applications using modern technologies.",
+            "Leading the development of web applications using modern technologies.",
         },
         {
-          title: "Junior Software Developer",
-          company: "Startup",
-          date: "2020 - 2022",
+          title: "Full Stack Developer",
+          company: "ALIZETH DIGITAL Company",
+          date: "07/2024 - 09/2024",
           description:
-            "Developed web applications and managed database integrations.",
+            "Development of web applications and database management.",
+        },
+        {
+          title: "Web Developer",
+          company: "Vintonet Company",
+          date: "12/2023 - 03/2024",
+          description: [
+            "Workshop management application providing a user-friendly solution to manage mechanical workshops. Through a simplified registration process, clients can easily track the details of their vehicles, including diagnostics and ongoing repairs.",
+            "Design of the user interface (UI/UX).",
+            "Integration of the QR code tracking system.",
+            "Development of the admin dashboard, implementing management features.",
+            "Data security and privacy.",
+          ],
+        },
+        {
+          title: "Web Integrator",
+          company: "Power Media Company",
+          date: "07/2023 - 11/2023",
+          description: [
+            "Conversion of graphic mockups into interactive interfaces.",
+            "Cross-platform optimization and responsive design.",
+            "Close collaboration and integration of dynamic content.",
+          ],
+        },
+        {
+          title: "Web Developer",
+          company: "Firma Solutions Company",
+          date: "02/2023 - 05/2023",
+          description: [
+            "Creation of a website for the Startup Firma Solutions: Design and development of an optimized platform to meet the company's needs and improve its online visibility.",
+            "Development of an admin dashboard: Establishing an intuitive user interface for data management and internal process optimization.",
+          ],
         },
       ],
       education: [
         {
-          title: "Bachelor’s degree in business informatics",
+          title: "Bachelor’s Degree in Business Computing",
           school: "Higher Institute of Computer Science, Mahdia Tunisia",
           date: "2020 - 2023",
-          description:
-            "Specialized in Software Engineering and Machine Learning.",
+          description: "Specialized in e-commerce.",
         },
         {
           title: "High School Diploma",
-          school: "Secondary School, Mahdia Tunisia",
-          date: "2016 - 2020",
-          description: "Focused on mathematics and computer science.",
+          school: "Hannibal High School, Djerba Tunisia",
+          date: "2019 - 2020",
+          description: "",
         },
       ],
     },
@@ -210,37 +240,70 @@ export const translations = {
       database: "إدارة قواعد البيانات",
       mobile: "تطوير تطبيقات الموبايل",
     },
+
     timeline: {
       title: "الخبرة والتعليم",
       work: [
         {
-          title: "مهندس برمجيات أول",
-          company: "شركة تكنولوجية",
-          date: "2022 - حتى الآن",
-          description: "قيادة تطوير تطبيقات الويب باستخدام التقنيات الحديثة.",
+          title: "مطور Full Stack",
+          company: "شركة Hightech Moving",
+          date: "10/2024 - الآن",
+          description: "قيادة تطوير تطبيقات الويب باستخدام تقنيات حديثة.",
         },
         {
-          title: "مطور برمجيات مبتدئ",
-          company: "شركة ناشئة",
-          date: "2020 - 2022",
-          description: "تطوير تطبيقات الويب وإدارة تكامل قواعد البيانات.",
+          title: "مطور Full Stack",
+          company: "شركة ALIZETH DIGITAL",
+          date: "07/2024 - 09/2024",
+          description: "تطوير تطبيقات الويب وإدارة قواعد البيانات.",
+        },
+        {
+          title: "مطور ويب",
+          company: "شركة Vintonet",
+          date: "12/2023 - 03/2024",
+          description: [
+            "تطبيق لإدارة ورش العمل يوفر حلاً سهل الاستخدام لإدارة ورش الميكانيك. من خلال عملية تسجيل مبسطة، يمكن للعملاء بسهولة تتبع تفاصيل مركباتهم، بما في ذلك التشخيص والإصلاحات الجارية.",
+            "تصميم واجهة المستخدم (UI/UX).",
+            "دمج نظام تتبع باستخدام رمز QR.",
+            "تطوير لوحة تحكم إدارية، وتنفيذ ميزات الإدارة.",
+            "أمان وخصوصية البيانات.",
+          ],
+        },
+        {
+          title: "مكامل ويب",
+          company: " شركة Power Media",
+          date: "07/2023 - 11/2023",
+          description: [
+            "تحويل النماذج الرسومية إلى واجهات تفاعلية.",
+            "تحسين متعدد المنصات وتصميم متجاوب.",
+            "التعاون الوثيق ودمج المحتوى الديناميكي.",
+          ],
+        },
+        {
+          title: "مطور ويب",
+          company: "شركة Firma Solutions",
+          date: "02/2023 - 05/2023",
+          description: [
+            "إنشاء موقع ويب لشركة Firma Solutions: تصميم وتطوير منصة محسنة لتلبية احتياجات الشركة وتحسين رؤيتها عبر الإنترنت.",
+            "تطوير لوحة تحكم إدارية: إنشاء واجهة مستخدم بديهية لإدارة البيانات وتحسين العمليات الداخلية.",
+          ],
         },
       ],
       education: [
         {
-          title: "بكالوريوس في معلومات الأعمال",
-          school: "المعهد العالي لعلوم الحاسوب، المهدية تونس",
+          title: "إجازة في الحوسبة التجارية",
+          school: "المعهد العالي للمعلوماتية، المهدية تونس",
           date: "2020 - 2023",
-          description: "متخصص في هندسة البرمجيات والتعلم الآلي.",
+          description: "متخصص في التجارة الإلكترونية.",
         },
         {
-          title: "شهادة البكالوريا",
-          school: "المدرسة الثانوية، المهدية تونس",
-          date: "2016 - 2020",
-          description: "التخصص في الرياضيات وعلوم الكمبيوتر.",
+          title: "شهادة الثانوية العامة",
+          school: "ثانوية حنبعل، جربة تونس",
+          date: " 2019 - 2020",
+          description: "",
         },
       ],
     },
+
     projects: {
       title: "مشاريعي",
       viewProject: "عرض المشروع",
