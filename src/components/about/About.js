@@ -100,11 +100,11 @@ const About = () => {
       title: "Cloud Services",
       description: "Working with cloud platforms and services",
     },
-    {
-      icon: FaTools,
-      title: "DevOps",
-      description: "Implementing CI/CD pipelines and automation",
-    },
+    // {
+    //   icon: FaTools,
+    //   title: "DevOps",
+    //   description: "Implementing CI/CD pipelines and automation",
+    // },
   ];
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
@@ -172,7 +172,7 @@ const About = () => {
               bgGradient="linear(to-r, blue.400, purple.500)"
               bgClip="text"
             >
-              About Me
+              {t('about.title')}
             </Heading>
             <Text
               fontSize="xl"
@@ -210,7 +210,7 @@ const About = () => {
               },
             }}
           >
-            What I Do
+            {t('about.do')}
           </Heading>
 
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>

@@ -8,7 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import { ChakraProvider, createLocalStorageManager } from "@chakra-ui/react";
 import Contact from "./components/contact/Contact";
 import { Footer } from "./components/footer/Footer";
-import { AirbnbCard } from "./components/accueil/Accuiel";
+import { AirbnbCard } from "./components/accueil/AirbnbCard";
 import { ProjectDetail } from "./components/projects/Project_Details";
 import { Reviews } from "./components/reviews/Reviews";
 import { Skills } from "./components/skills/Skills";
@@ -20,15 +20,11 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import { useEffect } from 'react';
 
-// Create a color mode manager
 const colorModeManager = createLocalStorageManager('portfolio-color-mode');
 
 function AppContent() {
   useEffect(() => {
-    // Set initial direction based on language
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
-
-    // Listen for language changes
     const handleLanguageChange = (lng: string) => {
       document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
     };
@@ -39,6 +35,7 @@ function AppContent() {
       i18n.off('languageChanged', handleLanguageChange);
     };
   }, []);
+  // const { i18n } = useTranslation();
 
   return (
     <ChakraProvider colorModeManager={colorModeManager}>
@@ -53,7 +50,7 @@ function AppContent() {
               <About />
               <Skills />
               <Timeline />
-            </>
+              </>
           } />
           <Route path="/contact" element={<Contact />} />
           <Route path="/reviews" element={<Reviews />} />

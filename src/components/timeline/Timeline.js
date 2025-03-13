@@ -1,37 +1,36 @@
 import { Box, Container, Heading, VStack, Text, Circle, useColorModeValue, Flex } from "@chakra-ui/react";
 import { useInView } from "react-intersection-observer";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { translations } from '../../translations/index';
+import { useTranslation } from "react-i18next";
 
-const timelineData = [
-  {
-    title: "Senior Software Engineer",
-    subtitle: "Tech Company",
-    date: "2022 - Present",
-    description: "Leading development of web applications using modern technologies.",
-    type: "work"
-  },
-  {
-    title: "Master's in Computer Science",
-    subtitle: "University Name",
-    date: "2020 - 2022",
-    description: "Specialized in Software Engineering and Machine Learning",
-    type: "education"
-  },
-  {
-    title: "Software Developer",
-    subtitle: "Another Tech Company",
-    date: "2018 - 2022",
-    description: "Developed and maintained multiple web applications.",
-    type: "work"
-  },
-  {
-    title: "Bachelor's in Computer Science",
-    subtitle: "University Name",
-    date: "2014 - 2018",
-    description: "Foundations of Computer Science and Software Development",
-    type: "education"
+const timelineData = (locale ) => {
+  const data = translations[locale]?.timeline;
+
+  if (!data) {
+    console.warn(`No translation found for locale: ${locale}`);
+    return [];
   }
-];
+
+  const workData = data.work?.map((work) => ({
+    title: work.title,
+    subtitle: work.company,
+    date: work.date,
+    description: work.description,
+    type: "work",
+  })) || [];
+
+  const educationData = data.education?.map((education) => ({
+    title: education.title,
+    subtitle: education.school,
+    date: education.date,
+    description: education.description,
+    type: "education",
+  })) || [];
+
+  return [...workData, ...educationData];
+};
+
 
 const TimelineItemComponent = ({ item, index }) => {
   const [ref, inView] = useInView({
@@ -47,19 +46,11 @@ const TimelineItemComponent = ({ item, index }) => {
       animation={inView ? "slideIn 0.5s ease-out forwards" : "none"}
       sx={{
         "@keyframes slideIn": {
-          "0%": {
-            opacity: 0,
-            transform: `translateX(${index % 2 === 0 ? -50 : 50}px)`,
-          },
-          "100%": {
-            opacity: 1,
-            transform: "translateX(0)",
-          },
+          "0%": { opacity: 0, transform: `translateX(${index % 2 === 0 ? -50 : 50}px)` },
+          "100%": { opacity: 1, transform: "translateX(0)" },
         },
       }}
-      style={{
-        animationDelay: `${index * 0.2}s`,
-      }}
+      style={{ animationDelay: `${index * 0.2}s` }}
       mb={8}
       justify={index % 2 === 0 ? "flex-start" : "flex-end"}
       position="relative"
@@ -88,12 +79,7 @@ const TimelineItemComponent = ({ item, index }) => {
           {item.type === "work" ? <FaBriefcase /> : <FaGraduationCap />}
         </Circle>
 
-        <Text
-          fontSize="sm"
-          color={item.type === "work" ? "blue.400" : "green.400"}
-          fontWeight="bold"
-          mb={2}
-        >
+        <Text fontSize="sm" color={item.type === "work" ? "blue.400" : "green.400"} fontWeight="bold" mb={2}>
           {item.date}
         </Text>
         <Text fontSize="xl" fontWeight="bold" mb={2}>
@@ -111,12 +97,30 @@ const TimelineItemComponent = ({ item, index }) => {
 };
 
 export const Timeline = () => {
+  const { t, i18n } = useTranslation();
   const bgColor = useColorModeValue("gray.50", "gray.800");
   const lineColor = useColorModeValue("gray.200", "gray.600");
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  const data = [
+    ...(t('timeline.work', { returnObjects: true }) || []).map((work) => ({
+      title: work.title,
+      subtitle: work.company,
+      date: work.date,
+      description: work.description,
+      type: "work",
+    })),
+    ...(t('timeline.education', { returnObjects: true }) || []).map((education) => ({
+      title: education.title,
+      subtitle: education.school,
+      date: education.date,
+      description: education.description,
+      type: "education",
+    })),
+  ];
 
   return (
     <Box py={20} bg={bgColor}>
@@ -129,19 +133,13 @@ export const Timeline = () => {
           mb={12}
           sx={{
             "@keyframes fadeInDown": {
-              "0%": {
-                opacity: 0,
-                transform: "translateY(20px)",
-              },
-              "100%": {
-                opacity: 1,
-                transform: "translateY(0)",
-              },
+              "0%": { opacity: 0, transform: "translateY(20px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" },
             },
           }}
         >
           <Heading textAlign="center">
-            Experience & Education
+          {t('timeline.title', 'Experience & Education')}
           </Heading>
         </Box>
 
@@ -156,7 +154,7 @@ export const Timeline = () => {
             transform="translateX(-50%)"
           />
 
-          {timelineData.map((item, index) => (
+          {data.map((item, index) => (
             <TimelineItemComponent key={index} item={item} index={index} />
           ))}
         </VStack>

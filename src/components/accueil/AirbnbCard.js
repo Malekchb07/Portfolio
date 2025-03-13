@@ -16,7 +16,6 @@ import { motion } from 'framer-motion';
 
 const MotionBox = motion(Box);
 
-// Card icons using emojis (you can replace these with actual images)
 const cardIcons = ['🎮', '🎲', '🎯', '🎪', '🎨', '🎭', '🎪', '🎯', '🎲', '🎮', '🎨', '🎭'];
 
 const Card = ({ icon, isFlipped, isMatched, onClick }) => {

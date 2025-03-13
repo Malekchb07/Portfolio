@@ -2,6 +2,7 @@ import { Box, Container, Heading, Progress, SimpleGrid, Text, useColorModeValue 
 import { motion, Transition } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaCode, FaDatabase, FaServer, FaMobile } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const MotionBox = motion(Box);
 
@@ -13,10 +14,10 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "Frontend Development", level: 90, icon: <FaCode size={30} />, color: "blue.400" },
-  { name: "Backend Development", level: 85, icon: <FaServer size={30} />, color: "green.400" },
-  { name: "Database Management", level: 80, icon: <FaDatabase size={30} />, color: "purple.400" },
-  { name: "Mobile Development", level: 75, icon: <FaMobile size={30} />, color: "orange.400" }
+  { name: "Frontend Development", level: 75, icon: <FaCode size={30} />, color: "blue.400" },
+  { name: "Backend Development", level: 75, icon: <FaServer size={30} />, color: "green.400" },
+  { name: "Database Management", level: 70, icon: <FaDatabase size={30} />, color: "purple.400" },
+  { name: "Mobile Development", level: 80, icon: <FaMobile size={30} />, color: "orange.400" }
 ];
 
 const cardTransition: Transition = {
@@ -73,7 +74,8 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
 
 export const Skills = () => {
   const bgColor = useColorModeValue("gray.50", "gray.800");
-
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
   return (
     <Box py={20} bg={bgColor}>
       <Container maxW="container.xl">
@@ -86,7 +88,9 @@ export const Skills = () => {
             textAlign="center" 
             mb={12}
           >
-            My Skills
+          {t('skills.title', 'My Skills')}
+
+            
           </Heading>
         </motion.div>
         
